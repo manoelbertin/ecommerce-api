@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :system_requirement do
-    name { "MyString" }
+    sequence(:name) { |n| "Basic #{n}" }
     operational_system { "MyString" }
     storage { "MyString" }
     processor { "MyString" }
