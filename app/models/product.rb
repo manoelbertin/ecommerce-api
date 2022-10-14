@@ -1,3 +1,4 @@
 class Product < ApplicationRecord
-  belongs_to :productable
+  belongs_to :productable, polymorphic: true
+  
 end
