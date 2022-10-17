@@ -106,7 +106,7 @@ GEM
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     orm_adapter (0.5.0)
-    pg (1.4.3)
+    pg (1.4.4)
     puma (4.3.12)
       nio4r (~> 2.0)
     racc (1.6.0)
@@ -195,7 +195,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
-  devise_token_auth (~> 1.1.4)
+  devise_token_auth (~> 1.1.5)
   factory_bot_rails
   faker
   listen (~> 3.2)
