@@ -1,4 +1,4 @@
-module Admin::V1
+module Admin::v1
   class ApiController < ApplicationController
     include Authenticable
   end
