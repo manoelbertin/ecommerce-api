@@ -10,7 +10,7 @@ describe FutureDateValidator do
   subject { Validator.new } 
 
   context "when date is before current date" do
-    
+    before 
   end
 
   context "when date is equal current date" do
@@ -20,5 +20,4 @@ describe FutureDateValidator do
   context "when date is greater than current date" do
     
   end
-  
 end
