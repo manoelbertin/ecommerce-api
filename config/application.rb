@@ -38,6 +38,10 @@ module EcommerceApi
     # São estruturas que gerenciam processos (estruturas segmentadas) 
     # passam por angumas estruturas que ficam no meio.
     # Skip views, helpers and assets when generating a new resource. Desativa JS, CSS, views, helpers
+    
     config.api_only = true
+
+    config.i18n.autoload_paths += %W["#{config.root}/app/validators/"]
+
   end
 end
