@@ -12,5 +12,13 @@ describe FutureDateValidator do
   context "when date is before current date" do
     
   end
+
+  context "when date is equal current date" do
+    
+  end
+
+  context "when date is greater than current date" do
+    
+  end
   
 end
