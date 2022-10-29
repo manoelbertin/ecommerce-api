@@ -10,7 +10,16 @@ describe FutureDateValidator do
   subject { Validator.new } 
 
   context "when date is before current date" do
-    before 
+    before { subject.date = 1.day.ago }
+
+    it "should be ivalid" do 
+      expect(subject.valid?).to be_falsey 
+    end
+
+    it "adds an error on model" do
+      subject.valid?
+      expect(subject.erros.keys).to include(:date)
+    end
   end
 
   context "when date is equal current date" do
