@@ -3,4 +3,5 @@ class FutureDateValidator < ActiveModel::EachValidator
     if value.present? && value <= Time.zone.now 
       message = options[:message] || :future_date
     end
+  end
 end
