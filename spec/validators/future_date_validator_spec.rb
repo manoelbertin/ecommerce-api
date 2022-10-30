@@ -18,7 +18,7 @@ describe FutureDateValidator do
 
     it "adds an error on model" do
       subject.valid?
-      expect(subject.erros.keys).to include(:date)
+      expect(subject.errors.keys).to include(:date)
     end
   end
 
@@ -31,7 +31,7 @@ describe FutureDateValidator do
 
     it "adds an error on model" do
       subject.valid?
-      expect(subject.erros.keys).to include(:date)
+      expect(subject.errors.keys).to include(:date)
     end
   end
 
