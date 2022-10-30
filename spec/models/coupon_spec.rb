@@ -16,4 +16,10 @@ RSpec.describe Coupon, type: :model do
     subject.valid?
     expect(subject.errors.keys).to include :due_date
   end
+
+  it "can't with current date due_date" do 
+    subject.due_date = Time.zone.now 
+    subject.valid?
+    expect(subject.errors.keys).to include :due_date
+  end
 end
