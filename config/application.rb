@@ -33,10 +33,7 @@ module EcommerceApi
     # the framework and any gems in your application.
 
     # Only loads a smaller set of middleware suitable for API only apps.
-    # Só carrega um pequeno conjunto recursos do framework (tratamentos, estruturas) apenas para API.
     # Middleware like session, flash, cookies can be added back manually.
-    # São estruturas que gerenciam processos (estruturas segmentadas) 
-    # passam por angumas estruturas que ficam no meio.
     # Skip views, helpers and assets when generating a new resource. Desativa JS, CSS, views, helpers
     
     config.api_only = true
