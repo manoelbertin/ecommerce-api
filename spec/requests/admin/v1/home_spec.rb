@@ -7,4 +7,9 @@ describe "Home", type: :request do
     get '/admin/v1/home', headers: auth_header(user)
     expect(response).to have_http_status(:ok)
   end
+
+  it "Test Home" do
+    get '/admin/v1/home', headers: auth_header(user)
+    expect(body_jason).to eq({'message' => 'YhuuuLL !!!'})
+  end
 end
