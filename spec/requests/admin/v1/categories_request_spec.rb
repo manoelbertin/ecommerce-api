@@ -5,7 +5,7 @@ RSpec.describe "Admin::V1::Categories", type: :request do
 
   context "GET /categories" do
     let(:url) { "/admin/v1/categories" }
-
+    let!(:categories) { create_list(:category, 5) }
   end
   
 end
