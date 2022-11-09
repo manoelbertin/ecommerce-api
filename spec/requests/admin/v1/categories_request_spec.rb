@@ -15,7 +15,7 @@ RSpec.describe "Admin::V1::Categories", type: :request do
 
     it "returns success status" do
       get url, headers: auth_header(user)
-      expect(request).to have_http_status(:ok)
+      expect(response).to have_http_status(:ok)
     end
   end
   
