@@ -21,18 +21,23 @@ RSpec.describe "Admin::V1::Categories", type: :request do
   
   context "POST /categories" do
     let(:url) { "/admin/v1/categories" }
-    let!(:categories) { create_list(:category, 5) }
+  
+    context "with valid params" do
 
-
-    it "returns all Categories" do
-      get url, headers: auth_header(user)
-      expect(body_json['categories']).to contain_exactly *categories.as_json(only: %i(id name))
     end
+  
+    context "with invalid params" do
 
-    it "returns success status" do
-      get url, headers: auth_header(user)
-      expect(response).to have_http_status(:ok)
     end
+      it "returns all Categories" do
+        get url, headers: auth_header(user)
+        expect(body_json['categories']).to contain_exactly *categories.as_json(only: %i(id name))
+      end
+
+      it "returns success status" do
+        get url, headers: auth_header(user)
+        expect(response).to have_http_status(:ok)
+      end
   end
 
 end
