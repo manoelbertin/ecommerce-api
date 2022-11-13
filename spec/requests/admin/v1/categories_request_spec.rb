@@ -37,21 +37,18 @@ RSpec.describe "Admin::V1::Categories", type: :request do
         expect_category = Category.last.as_json(only: %i(id name))
         expect(body_json['category']).to eq expect_category
       end
+    
+      it "returns success status" do
+        post url, headers: auth_header(user), params: category_params
+        expect(response).to have_http_status(:ok)
+      end
+    
     end
   
     context "with invalid params" do
 
     end
 
-      it "returns all Categories" do
-        get url, headers: auth_header(user)
-        expect(body_json['categories']).to contain_exactly *categories.as_json(only: %i(id name))
-      end
-
-      it "returns success status" do
-        get url, headers: auth_header(user)
-        expect(response).to have_http_status(:ok)
-      end
   end
 
 end
