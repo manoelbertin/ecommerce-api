@@ -35,6 +35,7 @@ RSpec.describe "Admin::V1::Categories", type: :request do
       it "returns last added Category" do
         post url, headers: auth_header(user), params: category_params
         expect_category = Category.last.as_json(only: %i(id name))
+        expect(body_json['category']).to eq expect_category
       end
     end
   
