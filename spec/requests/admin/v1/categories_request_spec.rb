@@ -28,7 +28,7 @@ RSpec.describe "Admin::V1::Categories", type: :request do
 
       it "adds a new Category" do
         expect do
-          post url, headers: auth_header(user)
+          post url, headers: auth_header(user), params: category_params
         end
       end
     end
