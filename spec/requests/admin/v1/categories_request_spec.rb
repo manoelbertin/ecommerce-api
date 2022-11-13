@@ -46,7 +46,7 @@ RSpec.describe "Admin::V1::Categories", type: :request do
     end
   
     context "with invalid params" do
-
+      
     end
 
   end
