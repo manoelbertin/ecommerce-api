@@ -3,5 +3,8 @@ module Admin::V1
     def index
       @categories = Category.all
     end
+
+    def create
+    end
   end
 end
