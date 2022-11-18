@@ -10,6 +10,8 @@ module Admin::V1
 
       @category.save!
       render :show 
+    rescue
+      render json: { errors: { fields: @category.erros.messages }}
     end
 
     private 
