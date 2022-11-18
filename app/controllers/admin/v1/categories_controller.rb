@@ -7,6 +7,9 @@ module Admin::V1
     def create
       @category = Category.new 
       @category.attributes = category_params
+
+      @category.save!
+      render :show 
     end
 
     private 
@@ -15,6 +18,6 @@ module Admin::V1
       return {} unless params.has_key?(:category)
       params.require(:category).permit(:id, :name)
     end
-    
+
   end
 end
