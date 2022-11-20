@@ -1,0 +1,6 @@
+"errors": {
+    "fields": {
+        "<field>": ["validation error 01", "error 02", ...]
+    },
+    "message": "general error"
+}
