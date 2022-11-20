@@ -23,7 +23,7 @@ RSpec.describe "Admin::V1::Categories", type: :request do
     let(:url) { "/admin/v1/categories" }
   
     context "with valid params" do
-      let(:category_params) { { category: attributes_for(:category)}.to_json }
+      let(:category_params) { { category: attributes_for(:category) }.to_json }
 
 
       it "adds a new Category" do
