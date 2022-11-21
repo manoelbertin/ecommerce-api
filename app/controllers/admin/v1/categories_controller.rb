@@ -8,10 +8,11 @@ module Admin::V1
       @category = Category.new 
       @category.attributes = category_params
 
+    def save_category!
       @category.save!
       render :show 
     rescue
-      render json: { errors: { fields: @category.errors.messages }}, status: :unprocessable_entity
+      render_error(fields: @category.errors.messages)
     end
 
     private 
