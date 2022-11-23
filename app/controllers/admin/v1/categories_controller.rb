@@ -8,19 +8,17 @@ module Admin::V1
       @category = Category.new 
       @category.attributes = category_params
 
-    def save_category!
       @category.save!
-      render :show 
+      render :show
     rescue
-      render_error(fields: @category.errors.messages)
+      render json: { errors: { fields: @category.errors.messages } }, status: :unprocessable_entity
     end
 
     private 
 
-    def category_params
+    def category_params 
       return {} unless params.has_key?(:category)
-      params.require(:category).permit(:id, :name)
-    end
-
+      params.require(:category).permit(:id, :nome)
+      end
   end
 end
