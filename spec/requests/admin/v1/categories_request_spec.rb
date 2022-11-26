@@ -70,7 +70,7 @@ RSpec.describe "Admin::V1::Categories", type: :request do
   end
 
   context "PATCH /categories/:id" do 
-
+    let (category) { create(:category) }
   end
 
 end
