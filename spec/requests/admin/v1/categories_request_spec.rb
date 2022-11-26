@@ -71,6 +71,14 @@ RSpec.describe "Admin::V1::Categories", type: :request do
 
   context "PATCH /categories/:id" do 
     let (category) { create(:category) }
-  end
+    let(:url) { "/admin/v1/categories/#{categorie.id}" }
 
+      context "with valid params" do 
+        
+      end
+
+      context "with invalid params" do 
+        
+      end
+  end
 end
