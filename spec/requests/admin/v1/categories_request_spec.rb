@@ -103,6 +103,9 @@ RSpec.describe "Admin::V1::Categories", type: :request do
 
         it 'does not update Category' do 
           old_name - category.name
+          patch url, headers: auth_header(user), params: category_invalid_params
+          category.reload
+          expect(category.name).to eq old_name
         end
       end
   end
