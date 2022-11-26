@@ -74,11 +74,26 @@ RSpec.describe "Admin::V1::Categories", type: :request do
     let(:url) { "/admin/v1/categories/#{categorie.id}" }
 
       context "with valid params" do 
-        
+        let(:new_name) { 'My new Category' }
+        let(:category_params) { category: {name: new_name}.to_json }
+
+        it 'updates Category' do 
+          patch url, headers: auth_header(user), params: category_params
+          category.reload
+          expect(category.name).to eq new_name
+        end
+
+        it 'returns updated category' do 
+          patch url, headers: auth_header(user), params: category_params
+          category.reload
+          expected_category = category.as_json(only: %i(id name))
+          expect(body_json['category']).to eq expected_category
+        end
       end
 
       context "with invalid params" do 
-        
+        let(:category_invalid_params) do 
+          { category: attributes_for(:category, name: nil) }.to_json
       end
   end
 end
