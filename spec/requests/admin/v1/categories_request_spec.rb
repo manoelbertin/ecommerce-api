@@ -21,10 +21,12 @@ RSpec.describe "Admin::V1::Categories", type: :request do
   
   context "POST /categories" do
     let(:url) { "/admin/v1/categories" }
+    
   
     context "with valid params" do
-      let(:category_params) { { category: attributes_for(:category) }.to_json }
-
+      let(:category_params) do
+        { category: attributes_for(:category) }.to_json
+      end
 
       it "adds a new Category" do
         expect do
@@ -34,8 +36,8 @@ RSpec.describe "Admin::V1::Categories", type: :request do
 
       it "returns last added Category" do
         post url, headers: auth_header(user), params: category_params
-        expect_category = Category.last.as_json(only: %i(id name))
-        expect(body_json['category']).to eq expect_category
+        expected_category = Category.last.as_json(only: %i(id name))
+        expect(body_json['category']).to eq expected_category
       end
     
       it "returns success status" do
@@ -57,7 +59,7 @@ RSpec.describe "Admin::V1::Categories", type: :request do
 
       it "return error messages" do 
         post url, headers: auth_header(user), params: category_invalid_params
-        expect(body_json['errors']['fields']).to has_key('name')
+        expect(body_json['errors']['fields']).to have_key('name')
       end
 
       it 'returns unprocessable_entity status' do 
@@ -65,6 +67,10 @@ RSpec.describe "Admin::V1::Categories", type: :request do
         expect(response).to have_http_status(:unprocessable_entity)
       end
     end
+  end
+
+  context "PATCH /categories" do 
+    
   end
 
 end
