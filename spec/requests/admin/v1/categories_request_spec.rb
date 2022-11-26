@@ -69,8 +69,8 @@ RSpec.describe "Admin::V1::Categories", type: :request do
     end
   end
 
-  context "PATCH /categories" do 
-    
+  context "PATCH /categories/:id" do 
+
   end
 
 end
