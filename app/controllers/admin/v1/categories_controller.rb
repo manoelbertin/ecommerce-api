@@ -10,6 +10,11 @@ module Admin::V1
       save_category!
     end
 
+    def update 
+      @category = Category.find(params[:id])
+      
+    end
+
     private 
 
     def category_params 
